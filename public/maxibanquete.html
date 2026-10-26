@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Maxibanquete | Alta Banquetería, Coctelería & Eventos en Santiago</title>
+  <meta name="description" content="Maxibanquete: Sabor, calidad y distinción en cada detalle. Cocktail gourmet, combos para eventos, almuerzos a la mesa y fiestas con bar abierto 5 hrs y DJ. Cotizador en tiempo real con selección de variedades y WhatsApp directo." />
+
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              300: '#f6e297',
+              400: '#e5c158',
+              500: '#d4af37',
+              600: '#b89428',
+              700: '#8f7422',
+            }
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --background: #08080a;
+      --foreground: #f4f4f5;
+      --gold: #d4af37;
+    }
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .font-serif {
+      font-family: 'Cinzel', serif;
+    }
+    input[type='range'] {
+      accent-color: #d4af37;
+    }
+  </style>
+</head>
+<body class="bg-[#08080a] text-stone-100 selection:bg-[#d4af37] selection:text-black min-h-screen">
+
+  <!-- TOP BANNER -->
+  <div class="bg-gradient-to-r from-[#17150f] via-[#241e10] to-[#17150f] border-b border-[#d4af37]/30 text-xs py-2 px-4 text-center text-stone-300">
+    <span class="inline-flex items-center gap-1.5 font-medium">
+      <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#d4af37]"></i>
+      <span>Servicio gastronómico profesional para eventos corporativos, galas y matrimonios. Cotizaciones: <b>+569 6458 7461</b></span>
+      <a href="#cotizador" class="text-[#d4af37] font-semibold underline ml-1 hover:text-gold-300">Ir al Cotizador</a>
+    </span>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-[#0c0c10]/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#8f7422] p-0.5 shadow-lg shadow-[#d4af37]/20 flex items-center justify-center">
+          <div class="w-full h-full bg-[#0d0d12] rounded-[10px] flex items-center justify-center">
+            <i data-lucide="utensils" class="w-5 h-5 text-[#d4af37]"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-serif text-2xl font-black tracking-wider text-white">
+              MAXI<span class="text-[#d4af37]">BANQUETE</span>
+            </span>
+            <span class="hidden sm:inline-block text-[9px] uppercase tracking-widest px-1.5 py-0.5 rounded border border-[#d4af37]/40 text-[#d4af37] font-semibold bg-[#d4af37]/10">Chile</span>
+          </div>
+          <p class="text-[11px] text-stone-400 font-light tracking-wide italic">Sabor, calidad y distinción en cada detalle</p>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-stone-300">
+        <a href="#notas-importantes" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1 font-semibold">
+          <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i> Notas Importantes
+        </a>
+        <a href="#institucionales" class="hover:text-[#d4af37] text-[#d4af37] transition font-semibold">🏛️ Grandes Clientes</a>
+        <a href="#servicios" class="hover:text-[#d4af37] transition">Menús Oficiales</a>
+        <a href="#canapes" class="hover:text-[#d4af37] transition">Canapés</a>
+        <a href="#cotizador" class="hover:text-gold-300 transition flex items-center gap-1.5 font-semibold text-white">
+          <i data-lucide="calculator" class="w-4 h-4 text-[#d4af37]"></i> Cotizador
+        </a>
+      </nav>
+
+      <a href="#cotizador" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#d4af37] via-[#f7e4a1] to-[#bfa035] text-black font-extrabold text-xs sm:text-sm shadow-lg shadow-[#d4af37]/20 transition hover:scale-105">
+        <i data-lucide="calculator" class="w-4 h-4 text-black"></i>
+        <span>Cotizar Evento</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-white/5 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#d4af37]/40 bg-[#16140e] text-[#d4af37] text-xs font-semibold uppercase tracking-widest mb-6">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Sabor, calidad y distinción en cada detalle
+      </div>
+      <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+        Banquetería & Coctelería con Selección de <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] via-[#f7e4a1] to-[#c79c2e]">Variedades</span>
+      </h1>
+      <p className="mt-5 text-base sm:text-lg text-stone-300 font-normal max-w-2xl mx-auto leading-relaxed">
+        Elige tus canapés favoritos (4 variedades por cada 100), tus platos principales a la mesa o los cócteles para tu barra libre.
+      </p>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#cotizador" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#d4af37] via-[#e5c158] to-[#c59c2c] text-black font-extrabold text-sm uppercase tracking-wider shadow-xl">
+          Elegir Variedades & Cotizar
+        </a>
+        <a href="#servicios" class="px-7 py-3.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-medium text-sm">
+          Ver Catálogo Completo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTAS IMPORTANTES (AL INICIO) -->
+  <section id="notas-importantes" class="py-16 bg-[#0f0e0b] border-b border-amber-500/20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="bg-gradient-to-b from-[#1b1710] to-[#12100b] border-2 border-amber-500/70 rounded-3xl p-6 sm:p-8 shadow-2xl mb-8">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-400 mb-3">
+          <i data-lucide="alert-circle" class="w-8 h-8"></i>
+        </div>
+        <span class="block text-xs uppercase tracking-widest text-amber-400 font-bold mb-1">Aviso Esencial</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-black text-white">
+          NO AGENDAMOS EVENTOS <br />
+          <span class="text-amber-400">SIN ABONO PREVIO</span>
+        </h2>
+        <p class="mt-4 text-sm text-stone-200 max-w-2xl mx-auto">
+          Para garantizar la fecha exclusiva en agenda y la compra de insumos frescos de alta cocina, <b>toda reserva requiere de abono previo confirmado</b>.
+        </p>
+        <p class="mt-2 text-xs text-amber-300 font-serif italic">¡Gracias por su comprensión! — Maxibanquete Banquetería</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <div class="p-5 rounded-2xl bg-[#14141a] border border-white/10">
+          <i data-lucide="truck" class="w-5 h-5 text-[#d4af37] mb-2"></i>
+          <h3 class="font-serif text-base font-bold text-white mb-1">Despacho Incluido</h3>
+          <p class="text-xs text-stone-300">Despacho incluido a domicilio dentro del radio urbano de Santiago.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-[#14141a] border border-white/10">
+          <i data-lucide="file-text" class="w-5 h-5 text-[#d4af37] mb-2"></i>
+          <h3 class="font-serif text-base font-bold text-white mb-1">Boleta o Factura</h3>
+          <p class="text-xs text-stone-300">Entregamos boleta o factura legal electrónica para empresas y particulares.</p>
+        </div>
+        <div class="p-5 rounded-2xl bg-[#14141a] border border-white/10">
+          <i data-lucide="message-circle" class="w-5 h-5 text-[#d4af37] mb-2"></i>
+          <h3 class="font-serif text-base font-bold text-white mb-1">Prueba en WhatsApp</h3>
+          <p class="text-xs text-stone-300">Envío directo de cotización a WhatsApp: <b>+569 6458 7461</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN INSTITUCIONES Y GRANDES EVENTOS (INACAP, BOMBEROS, LA ARAUCANA) -->
+  <section id="institucionales" class="py-20 bg-[#0a0a0e] border-b border-white/10 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-[#d4af37] text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-[#1c1911] border border-[#d4af37]/30 inline-block mb-3">
+          🏛️ Respaldo & Trayectoria Comprobada
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+          Grandes Instituciones y Empresas que Confían en Maxibanquete
+        </h2>
+        <p class="mt-4 text-stone-300 text-sm sm:text-base leading-relaxed">
+          Experiencia real atendiendo desde solemnes galas protocolares del <b>Cuerpo de Bomberos de Chile</b> y multitudinarias recepciones académicas en <b>INACAP</b>, hasta encuentros corporativos de <b>Caja La Araucana</b>.
+        </p>
+      </div>
+
+      <!-- 3 CASOS EMBLEMÁTICOS CON FOTOGRAFÍA REAL -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+        <!-- INACAP -->
+        <div class="group rounded-3xl bg-gradient-to-b from-[#16141a] to-[#0e0d12] border border-white/10 hover:border-[#d4af37]/50 overflow-hidden shadow-2xl transition-all">
+          <div class="relative aspect-[16/10] overflow-hidden bg-black/60">
+            <img src="/assets/fotos/inacap_c7c9d7b0.jpg" alt="Banquetería en INACAP" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-3 left-3 bg-red-600/90 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
+              INACAP
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-[11px] uppercase font-bold text-[#d4af37] tracking-wider block mb-1">Grandes Convocatorias Académicas</span>
+            <h3 class="font-serif text-xl font-bold text-white mb-2">Recepciones Académicas & Conferencias</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Banquete en el hall central de INACAP con mesones de más de 10 metros, arreglos de girasoles naturales, jugos recién preparados, pastelería artesanal y bocados de alta cocina para directivos y autoridades.
+            </p>
+          </div>
+        </div>
+
+        <!-- BOMBEROS DE CHILE -->
+        <div class="group rounded-3xl bg-gradient-to-b from-[#16141a] to-[#0e0d12] border border-white/10 hover:border-[#d4af37]/50 overflow-hidden shadow-2xl transition-all">
+          <div class="relative aspect-[16/10] overflow-hidden bg-black/60">
+            <img src="/assets/fotos/bombero_cbf938d9.jpg" alt="Gala Cuerpo de Bomberos de Chile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-3 left-3 bg-amber-600/90 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
+              Bomberos de Chile
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-[11px] uppercase font-bold text-[#d4af37] tracking-wider block mb-1">Cenas de Honor & Galas Solemnes</span>
+            <h3 class="font-serif text-xl font-bold text-white mb-2">Galas de Aniversario & Premiaciones</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Atención protocolar para compañías de Bomberos de Chile con buffet gastronómico de gala, empanaditas calientes, brochetas de carne y estaciones de brindis con mantelería y garzones uniformados.
+            </p>
+          </div>
+        </div>
+
+        <!-- CAJA LA ARAUCANA -->
+        <div class="group rounded-3xl bg-gradient-to-b from-[#16141a] to-[#0e0d12] border border-white/10 hover:border-[#d4af37]/50 overflow-hidden shadow-2xl transition-all">
+          <div class="relative aspect-[16/10] overflow-hidden bg-black/60">
+            <img src="/assets/fotos/la_araucana_2d9f7e8b.jpg" alt="Catering Caja La Araucana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute top-3 left-3 bg-blue-600/90 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-lg">
+              Caja La Araucana
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-[11px] uppercase font-bold text-[#d4af37] tracking-wider block mb-1">Encuentros Corporativos & Jornadas</span>
+            <h3 class="font-serif text-xl font-bold text-white mb-2">Coffee Breaks & Cócteles Ejecutivos</h3>
+            <p class="text-xs text-stone-300 leading-relaxed">
+              Presentación corporativa de alto nivel con estands temáticos, stands de madera natural, mini alfajores, tapaditos frescos y bocados salados para colaboradores y ejecutivos de la institución.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALERÍA GASTRONÓMICA EN VIVO -->
+      <div class="rounded-3xl bg-[#121217] border border-white/10 p-6 sm:p-8">
+        <h4 class="font-serif text-lg font-bold text-white mb-6 text-center">Nuestra Gastronomía en Primer Plano</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="rounded-2xl overflow-hidden aspect-square relative group">
+            <img src="/assets/fotos/servicio4_67bbed4d.jpg" alt="Mini hamburguesas caseras" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2.5">
+              <span class="text-[11px] font-bold text-white">Bandeja Espejada de Mini Hamburguesas</span>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-square relative group">
+            <img src="/assets/fotos/servicio2_696499b2.jpg" alt="Estación Sangría y Macarons" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2.5">
+              <span class="text-[11px] font-bold text-white">Sangría Artesanal, Macarons & Tablas</span>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-square relative group">
+            <img src="/assets/fotos/servicio_ce002b29.jpg" alt="Montaje de buffet corporativo" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2.5">
+              <span class="text-[11px] font-bold text-white">Montaje Buffet Corporativo Masivo</span>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden aspect-square relative group">
+            <img src="/assets/fotos/servicio_5_42bfe5e9.jpg" alt="Estación dulce de gala" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-2.5">
+              <span class="text-[11px] font-bold text-white">Mesón Dulce con Flores Naturales</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS Y MENÚS DETALLADOS -->
+  <section id="servicios" class="py-20 bg-[#08080c] border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-[#d4af37] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#18160f] border border-[#d4af37]/30 inline-block mb-3">
+          Catálogo Oficial
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Menús & Servicios Extraídos de los Flyers</h2>
+        <p class="mt-3 text-stone-400 text-sm">Toda la información exacta sin modificaciones.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid-display"></div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO DE CANAPÉS -->
+  <section id="canapes" class="py-16 bg-[#0a0a0e] border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 bg-[#121217] border border-white/10 rounded-3xl p-6 sm:p-8">
+      <div class="text-center mb-6">
+        <h3 class="font-serif text-2xl font-bold text-white">Canapés Cocktail (Cada 100 unidades: 4 variedades a escoger)</h3>
+        <p class="text-xs text-[#d4af37] mt-1">Pequeños bocados, grandes momentos</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5 text-xs text-stone-300" id="canapes-list-container"></div>
+      <p class="text-[11px] text-stone-500 text-center mt-6">*Receta del chef (salteados champiñones con verduras surtidas especias del sur)</p>
+    </div>
+  </section>
+
+  <!-- COTIZADOR (AL PENÚLTIMO) -->
+  <section id="cotizador" class="py-20 bg-[#0d0d12] border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-[#d4af37] text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-[#1c1911] border border-[#d4af37]/30 inline-block mb-3">
+          Cotizador Interactivo
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">Calcula Tu Cotización & Elige Tus Variedades</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 xl:col-span-8 space-y-6">
+          <div class="bg-[#111116] border border-white/10 rounded-2xl p-5 shadow-xl">
+            <h3 class="font-serif text-lg font-bold text-white mb-3">1. Selecciona el Tipo de Servicio</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="service-options-container"></div>
+          </div>
+
+          <div class="bg-[#111116] border border-white/10 rounded-2xl p-5 shadow-xl">
+            <h3 class="font-serif text-lg font-bold text-white mb-3" id="step2-title">2. Opciones de Menú o Combo</h3>
+            <div class="space-y-3" id="suboptions-container"></div>
+          </div>
+
+          <div class="bg-[#111116] border border-white/10 rounded-2xl p-5 shadow-xl" id="people-step-container">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="font-serif text-lg font-bold text-white">3. Cantidad de Invitados</h3>
+              <span class="text-xs text-stone-400" id="min-people-label">Mínimo: 15 personas</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex items-center bg-[#171720] border border-white/15 rounded-xl p-1.5">
+                <button type="button" onclick="adjustPeople(-5)" class="w-10 h-10 rounded-lg bg-white/5 text-white flex items-center justify-center font-bold">-</button>
+                <div class="px-6 text-center min-w-[90px]">
+                  <span class="font-serif text-2xl font-bold text-[#d4af37]" id="people-display">30</span>
+                </div>
+                <button type="button" onclick="adjustPeople(5)" class="w-10 h-10 rounded-lg bg-white/5 text-white flex items-center justify-center font-bold">+</button>
+              </div>
+              <input type="range" id="people-slider" min="15" max="250" step="5" value="30" oninput="onSliderChange(this.value)" class="flex-1 h-2 bg-stone-800 rounded-lg" />
+            </div>
+          </div>
+
+          <!-- SELECCIÓN DE VARIEDADES DINÁMICAS -->
+          <div class="bg-[#111116] border-2 border-[#d4af37]/40 rounded-2xl p-5 shadow-xl">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="font-serif text-lg font-bold text-white">4. Personaliza las Variedades de tu Menú</h3>
+              <span id="varieties-badge" class="text-[11px] font-bold text-[#d4af37] bg-[#d4af37]/10 px-2 py-0.5 rounded border border-[#d4af37]/30">4 a escoger</span>
+            </div>
+            <p class="text-xs text-stone-400 mb-3" id="varieties-helper">Haz clic en las variedades que deseas incluir:</p>
+            <div id="varieties-selector-container" class="space-y-3"></div>
+          </div>
+
+          <div class="bg-[#111116] border border-white/10 rounded-2xl p-5 shadow-xl">
+            <h3 class="font-serif text-lg font-bold text-white mb-3">Datos del Evento</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" id="input-client-name" oninput="updateCalculation()" placeholder="Nombre / Empresa" class="w-full bg-[#181822] border border-white/15 rounded-xl p-2.5 text-sm text-white" />
+              <input type="date" id="input-event-date" oninput="updateCalculation()" class="w-full bg-[#181822] border border-white/15 rounded-xl p-2.5 text-sm text-white" />
+              <input type="text" id="input-event-commune" oninput="updateCalculation()" placeholder="Comuna / Sector en Santiago" class="w-full bg-[#181822] border border-white/15 rounded-xl p-2.5 text-sm text-white" />
+              <select id="input-event-type" onchange="updateCalculation()" class="w-full bg-[#181822] border border-white/15 rounded-xl p-2.5 text-sm text-white">
+                <option value="Cumpleaños / Aniversario">Cumpleaños / Aniversario</option>
+                <option value="Matrimonio / Boda">Matrimonio / Boda</option>
+                <option value="Graduación">Graduación</option>
+                <option value="Empresa / Corporativo">Empresa / Corporativo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESUMEN -->
+        <div class="lg:col-span-5 xl:col-span-4 sticky top-24">
+          <div class="bg-gradient-to-b from-[#16140e] to-[#0f0f14] border-2 border-[#d4af37]/60 rounded-3xl p-6 shadow-2xl">
+            <span class="text-[10px] uppercase font-bold text-[#d4af37] bg-[#d4af37]/10 px-2 py-0.5 rounded">Resumen Oficial</span>
+            <h3 class="font-serif text-xl font-bold text-white mt-1">Presupuesto Estimado</h3>
+            <div class="mt-4 space-y-2 text-xs border-b border-white/10 pb-4 text-stone-300">
+              <div class="flex justify-between"><span class="text-stone-400">Servicio:</span><span id="res-service-name" class="font-semibold text-white">-</span></div>
+              <div class="flex justify-between"><span class="text-stone-400">Opción:</span><span id="res-option-name" class="font-semibold text-white">-</span></div>
+              <div class="flex justify-between"><span class="text-stone-400">Invitados:</span><span id="res-people-count" class="font-bold text-[#d4af37]">30 personas</span></div>
+              <div class="pt-2 border-t border-white/5" id="res-chosen-varieties-box"></div>
+            </div>
+            <div class="py-4">
+              <div class="flex justify-between items-baseline">
+                <span class="text-xs uppercase text-stone-400 font-semibold">Total Estimado</span>
+                <span class="font-serif text-3xl font-black text-[#d4af37]" id="res-grand-total">$0</span>
+              </div>
+              <div class="bg-[#0b0b0f] p-3 rounded-xl border border-white/5 text-[11px] text-stone-300 flex justify-between mt-3">
+                <span class="text-stone-400">Abono requerido para congelar fecha:</span>
+                <span class="font-bold text-amber-400 font-mono" id="res-abono">$0</span>
+              </div>
+            </div>
+            <a href="#" id="whatsapp-btn" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm shadow-xl transition">
+              <i data-lucide="message-circle" class="w-5 h-5 fill-white text-emerald-600"></i> Enviar a WhatsApp (+569 6458 7461)
+            </a>
+            <p class="text-center text-[10px] text-stone-400 mt-3">WhatsApp de atención directa: +569 6458 7461</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contacto" class="bg-[#050508] text-stone-400 py-12 border-t border-white/10 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <span class="font-serif text-2xl font-black text-white">MAXI<span class="text-[#d4af37]">BANQUETE</span></span>
+        <p class="text-xs text-stone-400 italic">"Sabor, calidad y distinción en cada detalle."</p>
+      </div>
+      <div class="flex flex-col sm:items-end gap-1.5 text-xs text-stone-300">
+        <p>WhatsApp oficial: <a href="https://wa.me/56964587461" class="text-[#d4af37] font-bold">+569 6458 7461</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/banqueteria.maxibanquete/" target="_blank" class="text-[#eed182] font-semibold hover:underline">@banqueteria.maxibanquete (10,6k seguidores)</a></p>
+        <p class="text-[10px] text-stone-400">Santiago, Región Metropolitana · Boleta o Factura disponible</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SERVICES_DATA = [
+      {
+        id: 'cocktail_gourmet',
+        name: 'Cocktail Gourmet',
+        subtitle: 'Canapés, empanadas, brochetas, hamburguesas, dulces y bebestible ilimitado',
+        tag: 'Por Persona',
+        priceNote: '$13.990 · $19.990 · $24.990 p/persona',
+        isCombo: false,
+        minPeople: 15,
+        defaultPeople: 30,
+        options: [
+          { id: 'gourmet_13990', name: 'Cocktail Gourmet $13.990 (1 Hr Bebestible)', price: 13990, desc: '5 canapés, 3 empanadas, 2 brochetas, 2 hamburguesas caseras, 3 dulces cocktail y 1 hr bebestible ilimitado.' },
+          { id: 'gourmet_19990', name: 'Cocktail Gourmet $19.990 (3 Hrs Bebestible)', price: 19990, desc: '5 canapés, 3 empanadas, 2 brochetas, 2 hamburguesas caseras, 3 dulces cocktail y 3 hrs bebestible ilimitado.' },
+          { id: 'gourmet_24990', name: 'Cocktail Gourmet $24.990 (Doble carnes y dulces)', price: 24990, desc: '5 canapés, 5 empanadas, 4 brochetas, 4 hamburguesas caseras, 6 dulces cocktail y 3 hrs bebestible ilimitado.' }
+        ]
+      },
+      {
+        id: 'combos_personas',
+        name: 'Cocktail por Personas (Combos)',
+        subtitle: 'Combos cerrados listos para servir: 10, 15, 20, 30, 50 y 100 personas',
+        tag: 'Packs Cerrados',
+        priceNote: '$75.990 a $550.000',
+        isCombo: true,
+        minPeople: 10,
+        defaultPeople: 20,
+        options: [
+          { id: 'combo_10', name: 'Cocktail 10 Personas — $75.990 (150 bocados)', price: 75990, people: 10, desc: '150 bocados mixtos con canapés, empanadas, hamburguesas, churrascos, pizzetas y brochetas.' },
+          { id: 'combo_15', name: 'Cocktail 15 Personas — $99.990 (195 bocados)', price: 99990, people: 15, desc: '195 bocados mixtos con canapés, empanadas, hamburguesas, churrascos, pizzetas y brochetas.' },
+          { id: 'combo_20', name: 'Cocktail 20 Personas — $129.990 (280 bocados)', price: 129990, people: 20, desc: '280 bocados mixtos con canapés, empanadas, hamburguesas, churrascos, pizzetas y brochetas.' },
+          { id: 'combo_30', name: 'Cocktail 30 Personas — $185.990 (370 bocados)', price: 185990, people: 30, desc: '370 bocados mixtos con canapés, empanadas, hamburguesas, churrascos, pizzetas y brochetas.' },
+          { id: 'combo_50', name: 'Cocktail 50 Personas — $379.990 (550 bocados + Montaje)', price: 379990, people: 50, desc: '550 bocados mixtos + Incluye montaje, 2 mesones, mantelería y arreglos florales.' },
+          { id: 'combo_100_grad', name: 'Cocktail Graduación 100 Personas — $550.000 ($5.500 p/p)', price: 550000, people: 100, desc: 'Tapaditos, churrasco queso, hamburguesas caseras, empanadas, dulces, canapés mixtos, bebidas, montaje y garzones.' }
+        ]
+      },
+      {
+        id: 'almuerzo_mesa',
+        name: 'Almuerzo Menú a la Mesa',
+        subtitle: 'Plato de fondo de gala (filete, ave rellena, costillar, salmón) + postres de autor',
+        tag: 'A la Mesa',
+        priceNote: '$22.990 · $26.990 (con bebestible)',
+        isCombo: false,
+        minPeople: 15,
+        defaultPeople: 30,
+        options: [
+          { id: 'almuerzo_base', name: 'Almuerzo a la Mesa — $22.990 p/p', price: 22990, desc: 'Filete al vino tinto, ave rellena, costillar o salmón + postres de gala, garzones, vajilla y chef.' },
+          { id: 'almuerzo_beb', name: 'Almuerzo con Bebestible 3 hrs — $26.990 p/p', price: 26990, desc: 'Menú a la mesa completo + bebestible durante 3 horas ilimitados.' }
+        ]
+      },
+      {
+        id: 'fiesta_bar_dj',
+        name: 'Fiesta Cocktail + Bar 5 hrs & DJ',
+        subtitle: 'Cóctel abundante continuo, bar abierto 5 horas e incluye DJ 🎧',
+        tag: 'Fiesta & Bar',
+        priceNote: '$29.990 p/persona',
+        isCombo: false,
+        minPeople: 25,
+        defaultPeople: 40,
+        options: [
+          { id: 'fiesta_completa', name: 'Fiesta Total: Bar 5 hrs + DJ + Cóctel ($29.990 p/p)', price: 29990, desc: '4 dulces, 5 canapés, 4 tapaditos, 2 empanadas, 2 hamburguesas, 2 pizzetas, 2 brochetas de vacuno, bar abierto 5 hrs y DJ.' }
+        ]
+      }
+    ];
+
+    const CANAPES_ITEMS = [
+      'Base de mayonesa, limón Palmitos',
+      'Base mayonesa, limón choclo',
+      'Choclo salame ahumado',
+      'Base mayonesa limón, chorito salsa verde',
+      'Base Camarón, queso crema ciboulette',
+      'Queso crema, jamón serrano',
+      'Queso crema, Mix de mariscos surtidos',
+      'Queso crema, nuez jamón serrano',
+      'Base mayonesa, limón Espárragos',
+      'Base salsa, tomates cherry ají verde',
+      'Base salsa, tomate cherry queso Camembert',
+      'Camarón salteados a la mantequilla hierbas',
+      'Pasta ave pimiento morones colores',
+      'Huevos de codornices, con amapolas'
+    ];
+
+    const MAIN_DISHES_LIST = [
+      'Carne al vino tinto filete, papas rústicas y ensalada mixta',
+      'Ave rellena jamón ahumado, queso cremoso con arroz primavera y ensalada',
+      'Costillar al horno con papas salteadas finas hierbas y ensalada tomate queso',
+      'Carne en sus 3 cocciones con pastelera o arroz primavera y salsa agridulce',
+      'Salmón a la plancha finas hierbas con papas rústicas y mix ensaladas'
+    ];
+
+    const DESSERTS_LIST = [
+      'Muss manjar, cobertura chocolate semi amargo con oro comestible',
+      'Trilogía muss manjar, brownie manjar nuez y mix frutos rojos con chantillí',
+      'Panqueques manjar con mix frutos rojos y chantillí',
+      'Triología mixta (muss frambuesa, waffles manjar, frutillas y merengue)'
+    ];
+
+    const TEST_WHATSAPP_PHONE = '56964587461';
+
+    let currentServiceId = 'cocktail_gourmet';
+    let currentOptionId = 'gourmet_13990';
+    let currentPeople = 30;
+
+    let chosenCanapes = [
+      'Base de mayonesa, limón Palmitos',
+      'Base Camarón, queso crema ciboulette',
+      'Queso crema, jamón serrano',
+      'Camarón salteados a la mantequilla hierbas'
+    ];
+    let chosenMainDish = MAIN_DISHES_LIST[0];
+    let chosenDessert = DESSERTS_LIST[0];
+
+    function formatCLP(amount) {
+      return '$' + amount.toLocaleString('es-CL');
+    }
+
+    function initServices() {
+      const container = document.getElementById('service-options-container');
+      container.innerHTML = SERVICES_DATA.map(s => `
+        <div onclick="selectService('${s.id}')" class="p-3.5 rounded-xl border cursor-pointer ${s.id === currentServiceId ? 'bg-gradient-to-br from-[#1a1710] to-[#262010] border-[#d4af37] ring-1 ring-[#d4af37]' : 'bg-[#15151b] border-white/10 hover:border-white/30'}">
+          <span class="text-[9px] uppercase font-bold text-[#d4af37] px-1.5 py-0.5 rounded bg-black/40 border border-[#d4af37]/30">${s.tag}</span>
+          <h4 class="font-serif text-sm font-bold text-white mt-1">${s.name}</h4>
+          <p class="text-[11px] text-stone-400">${s.priceNote}</p>
+        </div>
+      `).join('');
+
+      renderSuboptions();
+      renderVarietiesSelector();
+      updateCalculation();
+
+      // Canapes catalog
+      document.getElementById('canapes-list-container').innerHTML = CANAPES_ITEMS.map(c => `
+        <div class="p-2.5 rounded-lg bg-black/40 border border-white/5 flex items-center gap-2">
+          <span class="text-[#d4af37]">✦</span><span>${c}</span>
+        </div>
+      `).join('');
+
+      // Services grid
+      document.getElementById('services-grid-display').innerHTML = SERVICES_DATA.flatMap(s => s.options).map(opt => `
+        <div class="p-5 rounded-2xl bg-[#111116] border border-white/10 flex flex-col justify-between">
+          <div>
+            <h4 class="font-serif text-base font-bold text-white">${opt.name}</h4>
+            <span class="inline-block my-2 text-xs font-bold text-[#d4af37] bg-[#d4af37]/10 px-2.5 py-1 rounded border border-[#d4af37]/30">${formatCLP(opt.price)}</span>
+            <p class="text-xs text-stone-300 leading-relaxed">${opt.desc}</p>
+          </div>
+          <a href="#cotizador" class="mt-4 block text-center py-2 rounded-xl bg-white/5 hover:bg-[#d4af37] hover:text-black text-[#d4af37] text-xs font-bold transition">Cotizar esta Opción</a>
+        </div>
+      `).join('');
+    }
+
+    function selectService(id) {
+      currentServiceId = id;
+      const srv = SERVICES_DATA.find(s => s.id === id);
+      currentOptionId = srv.options[0].id;
+
+      const peopleStep = document.getElementById('people-step-container');
+      if (srv.isCombo) {
+        currentPeople = srv.options[0].people || 10;
+        peopleStep.style.display = 'none';
+      } else {
+        currentPeople = Math.max(srv.minPeople, currentPeople || srv.defaultPeople);
+        peopleStep.style.display = 'block';
+        document.getElementById('min-people-label').innerText = `Mínimo: ${srv.minPeople} personas`;
+        document.getElementById('people-slider').min = srv.minPeople;
+      }
+
+      initServices();
+    }
+
+    function renderSuboptions() {
+      const srv = SERVICES_DATA.find(s => s.id === currentServiceId);
+      const container = document.getElementById('suboptions-container');
+      document.getElementById('step2-title').innerText = srv.isCombo ? '2. Selecciona el Combo Cerrado' : '2. Selecciona el Nivel de Menú';
+
+      container.innerHTML = srv.options.map(opt => `
+        <div onclick="selectOption('${opt.id}')" class="p-3.5 rounded-xl border cursor-pointer ${opt.id === currentOptionId ? 'bg-[#18160f] border-[#d4af37] ring-1 ring-[#d4af37]/60' : 'bg-[#141419] border-white/10 hover:border-white/25'}">
+          <div class="flex justify-between items-center">
+            <span class="font-semibold text-sm text-white">${opt.name}</span>
+            <span class="font-bold text-xs text-[#d4af37]">${formatCLP(opt.price)} ${srv.isCombo ? '' : 'p/p'}</span>
+          </div>
+          <p class="text-[11px] text-stone-400 mt-1">${opt.desc}</p>
+        </div>
+      `).join('');
+    }
+
+    function selectOption(id) {
+      currentOptionId = id;
+      const srv = SERVICES_DATA.find(s => s.id === currentServiceId);
+      if (srv.isCombo) {
+        const opt = srv.options.find(o => o.id === id);
+        if (opt && opt.people) currentPeople = opt.people;
+      }
+      renderSuboptions();
+      renderVarietiesSelector();
+      updateCalculation();
+    }
+
+    function renderVarietiesSelector() {
+      const container = document.getElementById('varieties-selector-container');
+      const badge = document.getElementById('varieties-badge');
+      const helper = document.getElementById('varieties-helper');
+
+      if (currentServiceId === 'combos_personas') {
+        badge.innerText = 'Pack Mixto Incluido';
+        helper.innerText = 'Este combo ya incluye un surtido balanceado de bocados mixtos preparados por el chef:';
+        container.innerHTML = `
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#1a1710] to-[#121217] border border-[#d4af37]/30 text-xs text-stone-300">
+              <span class="text-[#d4af37] font-bold block mb-1">✨ Surtido Mixto Completo de Fábrica</span>
+              Los combos por personas ya vienen armados de fábrica con su proporción ideal de empanadas pino/queso, tapaditos mixtos, brochetas, hamburguesas, pizzetas, dulces y canapés. ¡Todo listo para calentar y servir!
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
+              <div class="p-2 rounded bg-black/40 border border-white/5">🥟 Empanadas pino/queso</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🥪 Tapaditos de pastas</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🍢 Brochetas jamón/queso</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🍔 Hamburguesas cocktail</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🥩 Churrascos cocktail</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🍕 Pizzetas napolitanas</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🧁 Dulces cocktail mixtos</div>
+              <div class="p-2 rounded bg-black/40 border border-white/5">🥖 Canapés cocktail mixtos</div>
+            </div>
+            <div class="pt-1">
+              <input type="text" id="input-combo-notes" oninput="updateCalculation()" placeholder="Notas o restricciones (Ej: 2 vegetarianos, sin mariscos...)" class="w-full bg-[#181822] border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder-stone-500 focus:border-[#d4af37] outline-none" />
+            </div>
+          </div>
+        `;
+      } else if (currentServiceId === 'almuerzo_mesa') {
+        badge.innerText = 'Fondo y Postre';
+        helper.innerText = 'Selecciona el plato principal y el postre para tu almuerzo a la mesa:';
+        container.innerHTML = `
+          <div class="space-y-3">
+            <p class="text-xs font-bold text-[#d4af37]">1. Plato Principal a la Mesa:</p>
+            ${MAIN_DISHES_LIST.map((dish, i) => `
+              <label class="p-2.5 rounded-xl border flex items-center gap-2 cursor-pointer ${chosenMainDish === dish ? 'bg-[#1a1710] border-[#d4af37]' : 'bg-[#141419] border-white/10'}">
+                <input type="radio" name="htmlMainDish" ${chosenMainDish === dish ? 'checked' : ''} onchange="setMainDish('${dish}')" />
+                <span class="text-xs text-white">${dish}</span>
+              </label>
+            `).join('')}
+            <p class="text-xs font-bold text-[#d4af37] pt-2">2. Postre de Gala:</p>
+            ${DESSERTS_LIST.map((dessert, i) => `
+              <label class="p-2.5 rounded-xl border flex items-center gap-2 cursor-pointer ${chosenDessert === dessert ? 'bg-[#1a1710] border-[#d4af37]' : 'bg-[#141419] border-white/10'}">
+                <input type="radio" name="htmlDessert" ${chosenDessert === dessert ? 'checked' : ''} onchange="setDessert('${dessert}')" />
+                <span class="text-xs text-white">${dessert}</span>
+              </label>
+            `).join('')}
+          </div>
+        `;
+      } else if (currentServiceId === 'fiesta_bar_dj') {
+        badge.innerText = 'Bar 5 hrs + DJ';
+        helper.innerText = 'Todo incluido: Menú de cóctel 8 variedades, bar abierto ilimitado y DJ:';
+        container.innerHTML = `
+          <div class="p-4 rounded-xl bg-[#14141a] border border-white/10 text-xs text-stone-300 space-y-2">
+            <p><b class="text-[#d4af37]">🎧 Música y Animación:</b> DJ en vivo durante todo el evento con sonido e iluminación.</p>
+            <p><b class="text-[#d4af37]">🍹 Bar Abierto 5 Horas:</b> Pisco 35°/40°, Ron, Mojito Limón, Mojito Frutos Rojos, Pisco Sour, Mango Sour, Espumante, Jugos y Aguas (todos incluidos de forma ilimitada).</p>
+            <p><b class="text-[#d4af37]">🍢 Menú Cóctel:</b> Brochetas de vacuno, pizzetas, mini hamburguesas, tapaditos, canapés, empanadas, postre en vaso y dulces.</p>
+          </div>
+        `;
+      } else {
+        badge.innerText = 'Menú Gourmet Cerrado';
+        helper.innerText = 'Receta de autor del chef oficial: Todo incluido y listo para el evento:';
+        container.innerHTML = `
+          <div class="space-y-3">
+            <div class="p-3.5 rounded-xl bg-gradient-to-r from-[#1c180e] to-[#121217] border border-[#d4af37]/40 text-xs text-stone-300">
+              <span class="text-[#d4af37] font-bold block mb-1">👨‍🍳 Menú Cocktail Gourmet Oficial del Chef</span>
+              Este servicio incluye la carta gourmet completa estandarizada: 5 canapés de autor (jamón serrano, camarón finas hierbas, salame ahumado, espárragos y salmón con amapolas), empanadas al horno, brochetas, hamburguesas caseras cheddar, dulces y bebestible ilimitado.
+            </div>
+            <div class="pt-1">
+              <input type="text" id="input-gourmet-notes" oninput="updateCalculation()" placeholder="Preferencias o restricciones (Ej: vegetarianos, sin mariscos...)" class="w-full bg-[#181822] border border-white/15 rounded-xl px-3 py-2 text-xs text-white placeholder-stone-500 focus:border-[#d4af37] outline-none" />
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function setMainDish(dish) {
+      chosenMainDish = dish;
+      renderVarietiesSelector();
+      updateCalculation();
+    }
+
+    function setDessert(d) {
+      chosenDessert = d;
+      renderVarietiesSelector();
+      updateCalculation();
+    }
+
+    function adjustPeople(delta) {
+      const srv = SERVICES_DATA.find(s => s.id === currentServiceId);
+      currentPeople = Math.max(srv.minPeople, Math.min(300, currentPeople + delta));
+      updateCalculation();
+    }
+
+    function onSliderChange(val) {
+      currentPeople = parseInt(val);
+      updateCalculation();
+    }
+
+    function updateCalculation() {
+      const srv = SERVICES_DATA.find(s => s.id === currentServiceId);
+      const opt = srv.options.find(o => o.id === currentOptionId) || srv.options[0];
+
+      document.getElementById('people-display').innerText = currentPeople;
+      document.getElementById('people-slider').value = currentPeople;
+
+      let baseTotal = srv.isCombo ? opt.price : opt.price * currentPeople;
+      let abono = Math.round(baseTotal * 0.4);
+
+      document.getElementById('res-service-name').innerText = srv.name;
+      document.getElementById('res-option-name').innerText = opt.name.split('(')[0];
+      document.getElementById('res-people-count').innerText = `${currentPeople} personas`;
+      document.getElementById('res-grand-total').innerText = formatCLP(baseTotal);
+      document.getElementById('res-abono').innerText = formatCLP(abono);
+
+      // Selected varieties summary box
+      const box = document.getElementById('res-chosen-varieties-box');
+      const comboNotesInput = document.getElementById('input-combo-notes');
+      const comboNotes = comboNotesInput ? comboNotesInput.value.trim() : '';
+      const gourmetNotesInput = document.getElementById('input-gourmet-notes');
+      const gourmetNotes = gourmetNotesInput ? gourmetNotesInput.value.trim() : '';
+
+      if (currentServiceId === 'combos_personas') {
+        box.innerHTML = `<p class="text-[11px] text-[#d4af37] font-semibold">✨ Combo Surtido Mixto</p><p class="text-[10px] text-stone-300">Empanadas, tapaditos, brochetas, hamburguesas, dulces y canapés incluidos.</p>${comboNotes ? `<p class="text-[10px] text-amber-300 italic mt-0.5">Nota: ${comboNotes}</p>` : ''}`;
+      } else if (currentServiceId === 'almuerzo_mesa') {
+        box.innerHTML = `<p class="text-[11px] text-[#d4af37] font-semibold">Variedades elegidas:</p><p class="text-[10px] text-stone-300">• Fondo: ${chosenMainDish.split(',')[0]}</p><p class="text-[10px] text-stone-300">• Postre: ${chosenDessert.split(',')[0]}</p>`;
+      } else if (currentServiceId === 'fiesta_bar_dj') {
+        box.innerHTML = `<p class="text-[11px] text-[#d4af37] font-semibold">Fiesta Todo Incluido:</p><p class="text-[10px] text-stone-300">Bar abierto 5 hrs ilimitado + DJ en vivo + Menú cóctel 8 variedades.</p>`;
+      } else {
+        box.innerHTML = `<p class="text-[11px] text-[#d4af37] font-semibold">👨‍🍳 Menú Gourmet del Chef</p><p class="text-[10px] text-stone-300">5 canapés finos, empanadas horno, brochetas y dulces incluidos.</p>${gourmetNotes ? `<p class="text-[10px] text-amber-300 italic mt-0.5">Nota: ${gourmetNotes}</p>` : ''}`;
+      }
+
+      const clientName = document.getElementById('input-client-name').value.trim() || 'Particular / Empresa';
+      const eventDate = document.getElementById('input-event-date').value || 'Por coordinar';
+      const eventCommune = document.getElementById('input-event-commune').value.trim() || 'Santiago (RM)';
+      const eventType = document.getElementById('input-event-type').value;
+
+      const lines = [
+        `🥂 *¡HOLA! COTIZACIÓN MAXIBANQUETE* 🥂`,
+        ``,
+        `Hola, me gustaría cotizar y consultar disponibilidad para mi evento:`,
+        ``,
+        `👤 *Cliente:* ${clientName}`,
+        `📅 *Fecha Estimada:* ${eventDate}`,
+        `📍 *Comuna / Sector:* ${eventCommune}`,
+        `🎉 *Tipo de Evento:* ${eventType}`,
+        ``,
+        `🍽️ *SERVICIO SELECCIONADO:*`,
+        `• *Categoría:* ${srv.name}`,
+        `• *Opción:* ${opt.name}`,
+        `• *Invitados:* ${currentPeople} personas`,
+        `• *Total Estimado:* ${formatCLP(baseTotal)} CLP`,
+        ``,
+        `✨ *COMPOSICIÓN Y PREFERENCIAS:*`
+      ];
+
+      if (currentServiceId === 'combos_personas') {
+        lines.push(`• *Modalidad:* Combo Surtido Mixto de Fábrica (Listo para servir)`);
+        lines.push(`• *Composición:* Empanadas pino/queso, tapaditos mixtos, brochetas, hamburguesas, pizzetas, dulces y canapés`);
+        if (comboNotes) {
+          lines.push(`• *Notas o Restricciones:* ${comboNotes}`);
+        }
+      } else if (currentServiceId === 'almuerzo_mesa') {
+        lines.push(`• *Plato Principal Elegido:* ${chosenMainDish}`);
+        lines.push(`• *Postre de Gala Elegido:* ${chosenDessert}`);
+      } else if (currentServiceId === 'fiesta_bar_dj') {
+        lines.push(`• *Modalidad:* Menú Cocktail Completo + Bar Abierto 5 Horas + DJ en Vivo`);
+      } else {
+        lines.push(`• *Modalidad:* Menú Cocktail Gourmet Oficial del Chef (Pack Cerrado)`);
+        lines.push(`• *Incluye:* 5 canapés finos, empanadas horno, brochetas, hamburguesas, dulces y bebestible`);
+        if (gourmetNotes) {
+          lines.push(`• *Notas o Restricciones:* ${gourmetNotes}`);
+        }
+      }
+
+      lines.push(``);
+      lines.push(`📋 *Abono sugerido para reserva:* ${formatCLP(abono)} CLP`);
+      lines.push(``);
+      lines.push(`*Políticas:*`);
+      lines.push(`- No se agendan eventos sin abono previo.`);
+      lines.push(`- Despacho incluido en radio urbano de Santiago.`);
+      lines.push(`- Indicar si requiero Boleta o Factura.`);
+      lines.push(``);
+      lines.push(`¿Tienen disponibilidad en agenda para esta fecha? ¡Muchas gracias!`);
+
+      const waUrl = `https://wa.me/${TEST_WHATSAPP_PHONE}?text=${encodeURIComponent(lines.join('\n'))}`;
+      document.getElementById('whatsapp-btn').href = waUrl;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      initServices();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

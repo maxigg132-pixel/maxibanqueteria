@@ -1,0 +1,7 @@
+{
+  "name": "Maxibanquete",
+  "description": "Banquetería y cóctel gourmet en Santiago de Chile. Especialistas en venta por 100 de canapés artesanales, combos para eventos, graduaciones, almuerzos a la mesa y fiestas con bar abierto de 5 horas y DJ.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
